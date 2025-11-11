@@ -184,13 +184,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:go_router/go_router.dart';
 
-class NriApp extends StatelessWidget {
-  const NriApp({super.key});
+class WorkPalApp extends StatelessWidget {
+  const WorkPalApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Nri Food Delivery',
+      title: 'WorkPal - Connect with Artisans',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -267,23 +267,16 @@ class AppHeader extends StatelessWidget {
             height: 40,
             width: 40,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary,
               borderRadius: BorderRadius.circular(8),
-            ),
-            child: const Center(
-              child: Text(
-                'Nri',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
+              image: const DecorationImage(
+                image: AssetImage('assets/images/AppIconn.png'),
+                fit: BoxFit.cover,
               ),
             ),
           ),
           const SizedBox(width: 8),
           const Text(
-            'Nri Food Delivery',
+            'WorkPal',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20,
@@ -385,7 +378,7 @@ class AppFooter extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           const Text(
-            '© 2025 Nri Food Delivery. All rights reserved.',
+            '© 2025 WorkPal. All rights reserved.',
             style: TextStyle(color: Color(0xFF757575)),
           ),
         ],
@@ -437,23 +430,16 @@ class HomePage extends StatelessWidget {
                     height: 100,
                     width: 100,
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primary,
                       borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        'Nri',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 32,
-                        ),
+                      image: const DecorationImage(
+                        image: AssetImage('assets/images/AppIconn.png'),
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
                   const SizedBox(height: 24),
                   const Text(
-                    'Welcome to Nri Food Delivery',
+                    'Welcome to WorkPal',
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -461,7 +447,8 @@ class HomePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   const Text(
-                    'Delicious food delivered to your doorstep',
+                    'Connect with skilled artisans, view their work, and hire them for your projects',
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
                       color: Color(0xFF757575),
@@ -478,7 +465,7 @@ class HomePage extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 32, vertical: 16),
                     ),
-                    child: const Text('Download App'),
+                    child: const Text('Get Started'),
                   ),
                 ],
               ),
@@ -550,22 +537,22 @@ class PrivacyPolicyContent extends StatelessWidget {
               const PolicySection(
                 title: 'Introduction',
                 content:
-                    'Nri ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how your personal information is collected, used, and disclosed by Nri when you use our mobile application and related services (collectively, the "Service").\n\nBy accessing or using the Service, you signify that you have read, understood, and agree to our collection, storage, use, and disclosure of your personal information as described in this Privacy Policy.',
+                    'WorkPal ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how your personal information is collected, used, and disclosed by WorkPal when you use our mobile application and related services (collectively, the "Service").\n\nBy accessing or using the Service, you signify that you have read, understood, and agree to our collection, storage, use, and disclosure of your personal information as described in this Privacy Policy.'
               ),
               const PolicySection(
                 title: 'Information We Collect',
                 content:
-                    'We collect several types of information from and about users of our Service:\n\n• Personal Information: When you register for an account, we collect your name, email address, phone number, and delivery address.\n\n• Payment Information: When you make purchases through the Service, your payment information is processed by secure third-party payment processors.\n\n• Location Information: With your consent, we collect precise location data to provide delivery services, show nearby restaurants, and improve our Service.\n\n• Device Information: We automatically collect device information such as your mobile device ID, model, manufacturer, operating system, and IP address.\n\n• Usage Information: We collect information about your interactions with the Service, including order history, browsing history, and time spent on the app.',
+                    'We collect several types of information from and about users of our Service:\n\n• Personal Information: When you register for an account, we collect your name, email address, phone number, and location.\n\n• Payment Information: When you hire artisans through the Service, your payment information is processed by secure third-party payment processors.\n\n• Location Information: With your consent, we collect location data to connect you with nearby artisans and improve our Service.\n\n• Device Information: We automatically collect device information such as your mobile device ID, model, manufacturer, operating system, and IP address.\n\n• Usage Information: We collect information about your interactions with the Service, including chat history, artisan profiles viewed, and time spent on the app.'
               ),
               const PolicySection(
                 title: 'How We Use Your Information',
                 content:
-                    'We use the information we collect to:\n\n• Process and deliver your orders\n• Provide, maintain, and improve our Service\n• Process your payments and prevent fraud\n• Communicate with you about your orders, account, and promotions\n• Send you technical notices, updates, and support messages\n• Respond to your comments and questions\n• Monitor and analyze trends, usage, and activities\n• Personalize your experience and provide content or features that match your profile or interests',
+                    'We use the information we collect to:\n\n• Connect you with artisans and facilitate communication\n• Provide, maintain, and improve our Service\n• Process your payments and prevent fraud\n• Communicate with you about your projects, account, and updates\n• Send you technical notices, updates, and support messages\n• Respond to your comments and questions\n• Monitor and analyze trends, usage, and activities\n• Personalize your experience and show relevant artisan profiles'
               ),
               const PolicySection(
                 title: 'Sharing of Information',
                 content:
-                    'We may share your personal information with:\n\n• Restaurant Partners: To fulfill your orders\n• Delivery Partners: To deliver your orders\n• Service Providers: Who perform services on our behalf, such as payment processing, data analysis, email delivery, and hosting services\n• Business Transfers: If we are involved in a merger, acquisition, or sale of all or a portion of our assets\n• Legal Requirements: When we believe disclosure is necessary to comply with the law, enforce our policies, or protect our or others\' rights, property, or safety',
+                    'We may share your personal information with:\n\n• Artisan Partners: To facilitate project connections and communication\n• Service Providers: Who perform services on our behalf, such as payment processing, data analysis, email delivery, and hosting services\n• Business Transfers: If we are involved in a merger, acquisition, or sale of all or a portion of our assets\n• Legal Requirements: When we believe disclosure is necessary to comply with the law, enforce our policies, or protect our or others\' rights, property, or safety'
               ),
               const PolicySection(
                 title: 'Your Choices',
@@ -590,7 +577,7 @@ class PrivacyPolicyContent extends StatelessWidget {
               const PolicySection(
                 title: 'Contact Us',
                 content:
-                    'If you have any questions about this Privacy Policy, please contact us at:\n\nEmail: Nrifood.care@gmail.com',
+                    'If you have any questions about this Privacy Policy, please contact us at:\n\nEmail: workpal.support@gmail.com'
               ),
               const SizedBox(height: 30),
             ],
@@ -698,12 +685,12 @@ class TermsContent extends StatelessWidget {
               const PolicySection(
                 title: 'Agreement to Terms',
                 content:
-                    'By accessing or using the Nri Food Delivery mobile application and services, you agree to be bound by these Terms of Service. If you do not agree to these Terms, you may not access or use the Service.',
+                    'By accessing or using the WorkPal mobile application and services, you agree to be bound by these Terms of Service. If you do not agree to these Terms, you may not access or use the Service.'
               ),
               const PolicySection(
                 title: 'Use of Service',
                 content:
-                    'Nri Food Delivery provides a platform connecting users with restaurants and delivery partners. You may use our Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service:\n\n• In any way that violates applicable laws or regulations\n• To impersonate or attempt to impersonate Nri, an Nri employee, another user, or any other person\n• To engage in any conduct that restricts or inhibits anyone\'s use or enjoyment of the Service',
+                    'WorkPal provides a platform connecting users with skilled artisans for various projects. You may use our Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service:\n\n• In any way that violates applicable laws or regulations\n• To impersonate or attempt to impersonate WorkPal, a WorkPal employee, another user, or any other person\n• To engage in any conduct that restricts or inhibits anyone\'s use or enjoyment of the Service'
               ),
               const PolicySection(
                 title: 'User Accounts',
@@ -713,12 +700,12 @@ class TermsContent extends StatelessWidget {
               const PolicySection(
                 title: 'Orders and Payments',
                 content:
-                    'By placing an order through our Service, you agree to pay all charges at the prices listed for your selected items, along with any applicable taxes and delivery fees. All payments are processed through secure third-party payment processors. Prices and availability of items are subject to change without notice.',
+                    'By hiring an artisan through our Service, you agree to pay all charges at the agreed rates for services, along with any applicable taxes and fees. All payments are processed through secure third-party payment processors. Rates and availability of artisans are subject to change without notice.'
               ),
               const PolicySection(
-                title: 'Delivery',
+                title: 'Services',
                 content:
-                    'Delivery times are estimates and may vary based on factors such as distance, traffic, weather conditions, and restaurant preparation times. Nri is not responsible for delays in delivery due to factors beyond our reasonable control.',
+                    'Project completion times are estimates and may vary based on factors such as project complexity, artisan availability, and material requirements. WorkPal is not responsible for delays in service delivery due to factors beyond our reasonable control.'
               ),
               const PolicySection(
                 title: 'Intellectual Property',
@@ -728,7 +715,7 @@ class TermsContent extends StatelessWidget {
               const PolicySection(
                 title: 'Limitation of Liability',
                 content:
-                    'Nri shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your access to or use of, or inability to access or use, the Service. In no event shall our total liability to you for all damages exceed the amount paid by you, if any, for accessing or using the Service during the twelve months prior to bringing the claim.',
+                    'WorkPal shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your access to or use of, or inability to access or use, the Service. In no event shall our total liability to you for all damages exceed the amount paid by you, if any, for accessing or using the Service during the twelve months prior to bringing the claim.'
               ),
               const PolicySection(
                 title: 'Changes to Terms',
@@ -738,7 +725,7 @@ class TermsContent extends StatelessWidget {
               const PolicySection(
                 title: 'Contact Us',
                 content:
-                    'If you have any questions about these Terms, please contact us at:\n\nEmail: Nrifood.care@gmail.com',
+                    'If you have any questions about these Terms, please contact us at:\n\nEmail: workpal.support@gmail.com'
               ),
               const SizedBox(height: 30),
             ],
@@ -787,7 +774,7 @@ class _AboutContent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'About Nri',
+                'About WorkPal',
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
@@ -805,7 +792,7 @@ class _AboutContent extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               const Text(
-                'At Nri Food Delivery, our mission is to connect people with the food they love from their favorite local restaurants. We strive to make food delivery convenient, reliable, and satisfying for everyone.',
+                'At WorkPal, our mission is to connect people with skilled artisans in their community. We strive to make finding and hiring talented craftspeople convenient, reliable, and rewarding for everyone.',
                 style: TextStyle(
                   fontSize: 16,
                   height: 1.5,
@@ -823,7 +810,7 @@ class _AboutContent extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               const Text(
-                'Founded in 2023, Nri Food Delivery began with a simple idea: to make great food more accessible. What started as a small operation serving a few neighborhoods has grown into a platform connecting thousands of customers with their favorite restaurants across multiple cities.',
+                'Founded in 2024, WorkPal began with a simple idea: to make skilled artisans more accessible to those who need their services. What started as a small platform has grown into a thriving community connecting customers with talented craftspeople across multiple cities.',
                 style: TextStyle(
                   fontSize: 16,
                   height: 1.5,
@@ -841,11 +828,11 @@ class _AboutContent extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               const Text(
-                '1. Browse restaurants and menus in your area\n'
-                '2. Select your favorite dishes and add them to your cart\n'
-                '3. Place your order and pay securely through our app\n'
-                '4. Track your order in real-time\n'
-                '5. Enjoy your food when it arrives at your door',
+                '1. Browse artisan profiles and portfolios in your area\n'
+                '2. Chat with artisans to discuss your project needs\n'
+                '3. View their previous work and read reviews\n'
+                '4. Hire the right artisan for your project\n'
+                '5. Stay connected throughout the project completion',
                 style: TextStyle(
                   fontSize: 16,
                   height: 1.8,
@@ -926,13 +913,13 @@ class _ContactContent extends StatelessWidget {
               const PolicySection(
                 title: 'Delete Account',
                 content:
-                    'At Nri App we value your privacy. Currently our app does nbot support direct i app deletion of your account if you would like to account and remove yoyur personal data , please folow the instruction below ',
+                    'At WorkPal we value your privacy. Currently our app does not support direct in-app deletion of your account. If you would like to delete your account and remove your personal data, please follow the instructions below.'
               ),
               const SizedBox(height: 10),
               const PolicySection(
                 title: 'How to Request Account deletion ',
                 content:
-                    'To delete our account and all associated data please send an email to our support team at Nrifood.care@gmail.com with the subject line "DELETE MY ACCOUNT" In your email, include your email',
+                    'To delete your account and all associated data, please send an email to our support team at workpal.support@gmail.com with the subject line "DELETE MY ACCOUNT". In your email, include your registered email address.'
               ),
               const SizedBox(height: 10),
               const PolicySection(

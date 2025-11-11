@@ -8,7 +8,7 @@ import 'package:go_router/go_router.dart';
 void main() {
   // Configure the URL strategy for web deployment
   setUrlStrategy(PathUrlStrategy());
-  runApp(const NriApp());
+  runApp(const WorkPalApp());
 }
 
 // class MyApp extends StatelessWidget {

@@ -1,10 +1,18 @@
-# nriweb
+# WorkPal
 
-A new Flutter project.
+WorkPal is a Flutter web application that connects people with skilled artisans in their community. The platform allows users to browse artisan profiles, view their work portfolios, chat with them, and hire them for various projects.
+
+## Features
+
+- Browse artisan profiles and portfolios
+- Chat with artisans to discuss project needs
+- View previous work and read reviews
+- Hire artisans for your projects
+- Social networking for artisans
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is built with Flutter for web deployment.
 
 A few resources to get you started if this is your first Flutter project:
 
