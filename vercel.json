@@ -1,10 +1,6 @@
 {
-    "functions": {
-        "build/web/**": {
-            "includeFiles": "build/web/**"
-        }
-    },
-    "rewrites": [
-        { "source": "/(.*)", "destination": "/build/web/index.html" }
-    ]
+    "rewrites": [{
+        "source": "/(.*)",
+        "destination": "/index.html"
+    }]
 }
