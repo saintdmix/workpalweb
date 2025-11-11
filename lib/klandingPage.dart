@@ -819,7 +819,7 @@ class _AboutContent extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               const Text(
-                'How It Works',
+                'How It Work',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
