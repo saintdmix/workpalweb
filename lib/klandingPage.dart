@@ -810,7 +810,7 @@ class _AboutContent extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               const Text(
-                'Founded in 2024, WorkPal began with a simple idea: to make skilled artisans more accessible to those who need their services. What started as a small platform has grown into a thriving community connecting customers with talented craftspeople across multiple cities.',
+                'Founded in 2023, WorkPal began with a simple idea: to make skilled artisans more accessible to those who need their services. What started as a small platform has grown into a thriving community connecting customers with talented craftspeople across multiple cities.',
                 style: TextStyle(
                   fontSize: 16,
                   height: 1.5,
