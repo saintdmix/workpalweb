@@ -183,6 +183,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class WorkPalApp extends StatelessWidget {
   const WorkPalApp({super.key});
@@ -1222,14 +1223,16 @@ class _SupportContent extends StatelessWidget {
     )).toList();
   }
 
-  void _launchEmail() {
+  void _launchEmail() async {
     final Uri emailUri = Uri(
       scheme: 'mailto',
       path: 'JOSEPHCHUKWUEBUKA10@GMAIL.COM',
       query: 'subject=WorkPal Support Request',
     );
     
-    print('Opening email: $emailUri');
+    if (await canLaunchUrl(emailUri)) {
+      await launchUrl(emailUri);
+    }
   }
 }
 
