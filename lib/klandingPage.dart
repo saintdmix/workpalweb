@@ -233,6 +233,11 @@ class WorkPalApp extends StatelessWidget {
         builder: (BuildContext context, GoRouterState state) =>
             const ContactPage(),
       ),
+      GoRoute(
+        path: '/support',
+        builder: (BuildContext context, GoRouterState state) =>
+            const SupportPage(),
+      ),
     ],
   );
 }
@@ -287,6 +292,7 @@ class AppHeader extends StatelessWidget {
           if (MediaQuery.of(context).size.width > 800) ...[
             const _NavLink(title: 'Home', path: '/'),
             const _NavLink(title: 'About', path: '/about'),
+            const _NavLink(title: 'Support', path: '/support'),
             const _NavLink(title: 'Delete Account', path: '/delete-account'),
           ] else
             PopupMenuButton<String>(
@@ -302,6 +308,10 @@ class AppHeader extends StatelessWidget {
                 const PopupMenuItem<String>(
                   value: '/about',
                   child: Text('About'),
+                ),
+                const PopupMenuItem<String>(
+                  value: '/support',
+                  child: Text('Support'),
                 ),
                 const PopupMenuItem<String>(
                   value: '/delete-account',
@@ -370,6 +380,9 @@ class AppFooter extends StatelessWidget {
               const SizedBox(width: 24),
               FooterLink(
                   title: 'Terms of Service', onTap: () => context.go('/terms')),
+              const SizedBox(width: 24),
+              FooterLink(
+                  title: 'Support', onTap: () => context.go('/support')),
               const SizedBox(width: 24),
               FooterLink(
                   title: 'Delete Account',
@@ -1061,6 +1074,207 @@ class _ContactItem extends StatelessWidget {
           ],
         ),
       ],
+    );
+  }
+}
+
+// Support Page
+class SupportPage extends StatelessWidget {
+  const SupportPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(60),
+        child: AppHeader(showBackButton: true),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: _SupportContent(),
+          ),
+          const AppFooter(),
+        ],
+      ),
+    );
+  }
+}
+
+class _SupportContent extends StatelessWidget {
+  final _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final contentWidth = screenWidth > 800 ? 800.0 : screenWidth * 0.9;
+
+    return Center(
+      child: Container(
+        width: contentWidth,
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Customer Support',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF333333),
+                ),
+              ),
+              const SizedBox(height: 24),
+              const Text(
+                'Frequently Asked Questions',
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF333333),
+                ),
+              ),
+              const SizedBox(height: 16),
+              ..._buildFAQs(),
+              const SizedBox(height: 32),
+              const Text(
+                'Contact Customer Care',
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF333333),
+                ),
+              ),
+              const SizedBox(height: 16),
+              const Text(
+                'Need more help? Send us a message and we will get back to you as soon as possible.',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFF555555),
+                ),
+              ),
+              const SizedBox(height: 24),
+              ElevatedButton(
+                onPressed: _launchEmail,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).colorScheme.primary,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 32, vertical: 16),
+                ),
+                child: const Text('Email Us Directly'),
+              ),
+              const SizedBox(height: 48),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  List<Widget> _buildFAQs() {
+    final faqs = [
+      {
+        'question': 'How do I find artisans in my area?',
+        'answer': 'Use our location-based search to browse artisan profiles near you. You can filter by skills, ratings, and availability.'
+      },
+      {
+        'question': 'How do I hire an artisan?',
+        'answer': 'Browse profiles, chat with artisans about your project, review their work, and send a hire request through the app.'
+      },
+      {
+        'question': 'Is payment secure on WorkPal?',
+        'answer': 'Yes, all payments are processed through secure third-party processors. Your financial information is never stored on our servers.'
+      },
+      {
+        'question': 'Can I see an artisan previous work?',
+        'answer': 'Absolutely! Each artisan has a portfolio showcasing their previous projects and customer reviews.'
+      },
+      {
+        'question': 'How do I chat with artisans?',
+        'answer': 'Use our built-in messaging system to discuss project details, timelines, and pricing directly with artisans.'
+      },
+      {
+        'question': 'What if I am not satisfied with the work?',
+        'answer': 'Contact our support team immediately. We have dispute resolution processes to ensure fair outcomes for all parties.'
+      },
+      {
+        'question': 'How do artisans get verified?',
+        'answer': 'Artisans go through our verification process including identity checks, skill assessments, and background reviews.'
+      },
+      {
+        'question': 'Can I cancel a project?',
+        'answer': 'Yes, you can cancel projects according to our cancellation policy. Terms vary based on project stage and agreement.'
+      },
+      {
+        'question': 'How do I leave a review?',
+        'answer': 'After project completion, you will receive a prompt to rate and review the artisan work through the app.'
+      },
+      {
+        'question': 'Is WorkPal available in my city?',
+        'answer': 'We are expanding rapidly! Check our app or website for current service areas, and sign up for updates about new locations.'
+      },
+    ];
+
+    return faqs.map((faq) => _FAQItem(
+      question: faq['question']!,
+      answer: faq['answer']!,
+    )).toList();
+  }
+
+  void _launchEmail() {
+    final Uri emailUri = Uri(
+      scheme: 'mailto',
+      path: 'JOSEPHCHUKWUEBUKA10@GMAIL.COM',
+      query: 'subject=WorkPal Support Request',
+    );
+    
+    print('Opening email: $emailUri');
+  }
+}
+
+class _FAQItem extends StatefulWidget {
+  final String question;
+  final String answer;
+
+  const _FAQItem({
+    required this.question,
+    required this.answer,
+  });
+
+  @override
+  State<_FAQItem> createState() => _FAQItemState();
+}
+
+class _FAQItemState extends State<_FAQItem> {
+  bool _isExpanded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: const EdgeInsets.only(bottom: 8),
+      child: ExpansionTile(
+        title: Text(
+          widget.question,
+          style: const TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 16,
+          ),
+        ),
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Text(
+              widget.answer,
+              style: const TextStyle(
+                fontSize: 14,
+                color: Color(0xFF555555),
+                height: 1.5,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
